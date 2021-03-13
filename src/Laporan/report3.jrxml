@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4d62776d-ff67-46b0-ae55-3869026204f9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="13"/>
+	<queryString>
+		<![CDATA[SELECT
+     services.`no_Service` AS services_no_Service,
+     services.`tgl_Service` AS services_tgl_Service,
+     services.`total` AS services_total,
+     services.`kd_Pel` AS services_kd_Pel,
+services.`Kd_Mk` AS services_Kd_Mk
+FROM
+     `services` services]]>
+	</queryString>
+	<field name="services_no_Service" class="java.lang.String"/>
+	<field name="services_tgl_Service" class="java.sql.Date"/>
+	<field name="services_total" class="java.lang.Double"/>
+	<field name="services_kd_Pel" class="java.lang.String"/>
+	<field name="services_Kd_Mk" class="java.lang.String"/>
+	<variable name="services_total_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{services_total}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="10" width="250" height="34" uuid="29d9b4d4-1f6a-4bbc-861e-a6e32ea4c166"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bengkel Performa Motor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="45" width="311" height="50" uuid="d378ea9b-2567-43a4-bc4c-9c51cbeae1a0"/>
+				<textElement textAlignment="Justified">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jl. Taman Mini Pintu 2 Atas , No. 8/9 Kel. Lubang Buaya, Kec.Cipayung, Jakarta Timur]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="94" width="555" height="1" uuid="5bd3dd1a-303b-48f9-af43-47561a988f8b"/>
+			</line>
+			<image>
+				<reportElement x="20" y="0" width="212" height="85" uuid="aed4615e-0759-486f-bacc-ee5c9e39aebd"/>
+				<imageExpression><![CDATA["C:\\Users\\Hp\\Documents\\NetBeansProject\\Visualtgs\\src\\gambar\\logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="163" y="13" width="237" height="31" uuid="d94065c2-ddaa-4f2f-b638-715544edd789"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Service]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="56" width="555" height="1" uuid="8cfdd1bc-df53-461d-8ded-014973c84da9"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="10" width="75" height="20" uuid="286db091-038a-433b-bb9f-3ce8878a1e83"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="10" width="92" height="20" uuid="e6096f29-3deb-48ad-a2c1-c012b1eae94d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tanggal Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="10" width="85" height="20" uuid="a9a617c9-31f5-45d4-8315-b81e2f02622a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Total Service]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="9" width="100" height="20" uuid="be92ed6b-0690-4f0a-9f40-4490da354ecc"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kode Pelanggan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="27" y="32" width="503" height="1" uuid="577381ee-2336-4023-b052-b4308062b831"/>
+			</line>
+			<staticText>
+				<reportElement x="452" y="10" width="79" height="20" uuid="05c8f22f-07a1-47df-b0bf-c93cda25bba7"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Kode Mekanik]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="10" width="75" height="20" uuid="06d3cf16-0522-44a6-9376-0b95afd7a009"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{services_no_Service}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="10" width="92" height="20" uuid="8d6ac690-98d9-4369-975e-f0a2e728d3b2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{services_tgl_Service}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;#,##0.00-">
+				<reportElement x="232" y="10" width="85" height="20" uuid="2a7a3004-2db5-4685-92f7-636e7456a81f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{services_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="10" width="100" height="20" uuid="4239944e-b3cf-41ea-b7d3-ba0225303f80"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{services_kd_Pel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="452" y="10" width="79" height="20" uuid="290fe73f-f7f2-4402-a859-b9fcb1ceb329"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{services_Kd_Mk}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="28" y="34" width="503" height="1" uuid="b391d456-446c-4491-93da-0029bd382ce0"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="136">
+			<staticText>
+				<reportElement x="393" y="30" width="138" height="20" uuid="b816c3c7-595e-4ccb-9e20-22ba6a75b347"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Pemilik Performa Motor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="102" width="137" height="25" uuid="3c05c835-bf25-413d-a349-83588756aeb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[M. Anhar Sayyidin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="10" width="37" height="20" uuid="fe2c61e3-2516-4ccb-a53d-c253ebbb875f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="430" y="10" width="117" height="20" uuid="58e8831e-3d69-4b76-be43-3ae2f0ed04be"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="#,##0.00;#,##0.00-">
+				<reportElement x="447" y="12" width="100" height="20" uuid="68ad22fc-487b-4771-8f4e-c2e3e247b715"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{services_total_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="345" y="11" width="85" height="20" uuid="8fa2f378-f8d9-47e7-b82a-b5fdd24f300b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Sub Total]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
